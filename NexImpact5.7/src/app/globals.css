@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --impact-blue: #5B6EF5;
+  --purpose-purple: #9B51E0;
+  --sunrise-gold: #FFD166;
+  --background-light: #F7F9FC;
+  --background-dark: #121826;
+  --text-light: #333333;
+  --text-dark: #F7F9FC;
+}
+
+@layer base {
+  body {
+    @apply font-poppins bg-background text-foreground transition-colors duration-300;
+  }
+}
+
+.glassmorphism {
+  @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border border-white/20 dark:border-slate-700/20 shadow-lg;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
+
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-impact-blue to-purpose-purple;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-br from-impact-blue to-purpose-purple;
+}
+
+.animated-bg {
+  background: linear-gradient(-45deg, #5B6EF5, #9B51E0, #8B5CF6, #6366F1);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.waveform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.waveform-bar {
+  width: 3px;
+  border-radius: 3px;
+  background: var(--impact-blue);
+  animation: waveform-animation 1s ease-in-out infinite;
+}
+
+@keyframes waveform-animation {
+  0%, 100% {
+    height: 8px;
+  }
+  50% {
+    height: 20px;
+  }
+}
+
+.waveform-bar:nth-child(1) { animation-delay: 0.1s; }
+.waveform-bar:nth-child(2) { animation-delay: 0.2s; }
+.waveform-bar:nth-child(3) { animation-delay: 0.3s; }
+.waveform-bar:nth-child(4) { animation-delay: 0.4s; }
+.waveform-bar:nth-child(5) { animation-delay: 0.5s; }
+.waveform-bar:nth-child(6) { animation-delay: 0.4s; }
+.waveform-bar:nth-child(7) { animation-delay: 0.3s; }
+.waveform-bar:nth-child(8) { animation-delay: 0.2s; }
+.waveform-bar:nth-child(9) { animation-delay: 0.1s; }
